@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     public float speed;
-    float velX = 5.0f;
+    public float velX, velY;
     public float jumpForce = 700f;
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -17,16 +17,20 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        Move();
         Jump();
+        FlipCharacacter();
+    }
+    private void FixedUpdate()
+    {
+        Move();
     }
 
     void Move()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        Vector2 movement = new Vector2(moveHorizontal, 0f);
-        rb.velocity = new Vector2(movement.x * velX, rb.velocity.y);
+        velX = Input.GetAxisRaw("Horizontal");
+        velY = rb.velocity.y;
 
+        rb.velocity = new Vector2 (velX * speed, velY);
     }
 
     void Jump()
@@ -34,6 +38,18 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.AddForce(new Vector2(0f, jumpForce));
+        }
+    }
+
+    void FlipCharacacter()
+    {
+        if (rb.velocity.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 

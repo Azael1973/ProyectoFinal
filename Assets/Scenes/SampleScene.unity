@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 234855822}
   - component: {fileID: 234855823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DownAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 475033769}
   - component: {fileID: 475033772}
   - component: {fileID: 475033773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,6 +461,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  velX: 5
+  velY: 0
   jumpForce: 300
 --- !u!114 &475033770
 MonoBehaviour:
@@ -622,7 +624,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16042584, y: -0.02, z: -8.596648}
+  m_LocalPosition: {x: -0, y: -0.02, z: -8.596648}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -977,7 +979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1619121178}
   - component: {fileID: 1619121179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
