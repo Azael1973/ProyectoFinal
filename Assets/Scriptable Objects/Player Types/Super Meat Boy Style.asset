@@ -9,39 +9,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5759d6a660e3ac14dbd9a801bf9d7627, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2b2978bb9dd46489e5225710c413be, type: 3}
   m_Name: Super Meat Boy Style
   m_EditorClassIdentifier: 
-  gravityStrength: -44.444447
-  gravityScale: 1.4814816
-  fallGravityMult: 2
-  maxFallSpeed: 20
-  fastFallGravityMult: 2
-  maxFastFallSpeed: 20
-  runMaxSpeed: 25
-  runAcceleration: 2
-  runAccelAmount: 4
-  runDecceleration: 10
-  runDeccelAmount: 20
-  accelInAir: 1
+  gravityStrength: NaN
+  gravityScale: NaN
+  fallGravityMult: 0
+  maxFallSpeed: 0
+  fastFallGravityMult: 0
+  maxFastFallSpeed: 0
+  runMaxSpeed: 0
+  runAcceleration: 0.01
+  runAccelAmount: NaN
+  runDecceleration: 0.01
+  runDeccelAmount: NaN
+  accelInAir: 0
   deccelInAir: 0
   doConserveMomentum: 1
-  jumpHeight: 4.5
-  jumpTimeToApex: 0.45
-  jumpForce: 20
-  jumpCutGravityMult: 4
+  jumpHeight: 0
+  jumpTimeToApex: 0
+  jumpForce: NaN
+  jumpCutGravityMult: 0
   jumpHangGravityMult: 0
   jumpHangTimeThreshold: 0
   jumpHangAccelerationMult: 0
   jumpHangMaxSpeedMult: 0
-  wallJumpForce: {x: 20, y: 20}
-  wallJumpRunLerp: 0.75
-  wallJumpTime: 0.2
-  doTurnOnWallJump: 1
-  slideSpeed: -15
-  slideAccel: 3
-  coyoteTime: 0.2
-  jumpInputBufferTime: 0.2
+  wallJumpForce: {x: 0, y: 0}
+  wallJumpRunLerp: 0
+  wallJumpTime: 0
+  doTurnOnWallJump: 0
+  slideSpeed: 0
+  slideAccel: 0
+  coyoteTime: 0
+  jumpInputBufferTime: 0
   dashAmount: 0
   dashSpeed: 0
   dashSleepTime: 0
