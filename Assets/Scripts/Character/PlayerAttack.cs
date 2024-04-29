@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public BoxCollider2D colAttack;
     public BoxCollider2D downAttackCollider;
     public Rigidbody2D playerRigidbody;
+    public Animator animator;
     public float activeTime = 0.2f;
     public float bounceForce = 600f;
 
@@ -21,6 +22,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && !Input.GetKey(KeyCode.S))
         {
             StartCoroutine(ActivateCollider(colAttack, activeTime));
+
         }
         
         else if (Input.GetKeyDown(KeyCode.E) && Input.GetKey(KeyCode.S))

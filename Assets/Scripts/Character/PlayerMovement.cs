@@ -130,9 +130,9 @@ public class PlayerMovement : MonoBehaviour
 			_isJumpCut = false;
 			_isJumpFalling = false;
 			Jump();
-		}
-		//WALL JUMP
-		else if (CanWallJump() && LastPressedJumpTime > 0)
+        }
+        //WALL JUMP
+        else if (CanWallJump() && LastPressedJumpTime > 0)
 		{
 			IsWallJumping = true;
 			IsJumping = false;
@@ -143,10 +143,20 @@ public class PlayerMovement : MonoBehaviour
 			
 			WallJump(_lastWallJumpDir);
 		}
-		#endregion
 
-		#region SLIDE CHECKS
-		if (CanSlide() && ((LastOnWallLeftTime > 0 && _moveInput.x < 0) || (LastOnWallRightTime > 0 && _moveInput.x > 0)))
+        //JUMP ANIMATION
+        if (IsJumping == true)
+        {
+            animator.SetBool("Jump", true);
+        }
+        else
+        {
+            animator.SetBool("Jump", false);
+        }
+        #endregion
+
+        #region SLIDE CHECKS
+        if (CanSlide() && ((LastOnWallLeftTime > 0 && _moveInput.x < 0) || (LastOnWallRightTime > 0 && _moveInput.x > 0)))
 			IsSliding = true;
 		else
 			IsSliding = false;
