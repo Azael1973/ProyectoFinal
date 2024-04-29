@@ -6,38 +6,30 @@ public class PlayerMovement : MonoBehaviour
 	public PlayerData Data;
 
 	#region Variables
-	//Components
     public Rigidbody2D RB { get; private set; }
+	public Animator animator;
 
-	//Variables control the various actions the player can perform at any time.
-	//These are fields which can are public allowing for other sctipts to read them
-	//but can only be privately written to.
 	public bool IsFacingRight { get; private set; }
 	public bool IsJumping { get; private set; }
 	public bool IsWallJumping { get; private set; }
 	public bool IsSliding { get; private set; }
 
-	//Timers (also all fields, could be private and a method returning a bool could be used)
 	public float LastOnGroundTime { get; private set; }
 	public float LastOnWallTime { get; private set; }
 	public float LastOnWallRightTime { get; private set; }
 	public float LastOnWallLeftTime { get; private set; }
 
-	//Jump
 	private bool _isJumpCut;
 	private bool _isJumpFalling;
 
-	//Wall Jump
 	private float _wallJumpStartTime;
 	private int _lastWallJumpDir;
 
 	private Vector2 _moveInput;
 	public float LastPressedJumpTime { get; private set; }
 
-	//Set all of these up in the inspector
 	[Header("Checks")] 
 	[SerializeField] private Transform _groundCheckPoint;
-	//Size of groundCheck depends on the size of your character generally you want them slightly small than width (for ground) and height (for the wall check)
 	[SerializeField] private Vector2 _groundCheckSize = new Vector2(0.49f, 0.03f);
 	[Space(5)]
 	[SerializeField] private Transform _frontWallCheckPoint;
@@ -258,7 +250,16 @@ public class PlayerMovement : MonoBehaviour
 		float movement = speedDif * accelRate;
 
 		RB.AddForce(movement * Vector2.right, ForceMode2D.Force);
-	}
+
+        if (RB.velocity.x != 0)
+        {
+            animator.SetBool("Walk", true);
+        }
+        else
+        {
+            animator.SetBool("Walk", false);
+        }
+    }
 
 	private void Turn()
 	{
@@ -356,7 +357,6 @@ public class PlayerMovement : MonoBehaviour
 			return false;
 	}
     #endregion
-
 
     #region EDITOR METHODS
     private void OnDrawGizmosSelected()
