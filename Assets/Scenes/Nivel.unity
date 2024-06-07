@@ -2979,7 +2979,7 @@ Transform:
   m_GameObject: {fileID: 475033764}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.99, y: 52.6, z: 0.045987118}
+  m_LocalPosition: {x: -12.3, y: 53.9, z: 0.045987118}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3963,7 +3963,7 @@ Transform:
   m_GameObject: {fileID: 607576253}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.99, y: 52.6, z: -9.954013}
+  m_LocalPosition: {x: -12.300001, y: 53.9, z: -9.954013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7777,10 +7777,10 @@ GameObject:
   - component: {fileID: 1270961527}
   - component: {fileID: 1270961526}
   - component: {fileID: 1270961525}
-  - component: {fileID: 1270961524}
   - component: {fileID: 1270961523}
   - component: {fileID: 1270961532}
   - component: {fileID: 1270961531}
+  - component: {fileID: 1270961533}
   m_Layer: 10
   m_Name: Boss
   m_TagString: Enemy
@@ -7815,20 +7815,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1270961524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270961522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34013e1326b0b0544abe3f3e84c6dbb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  isDamaged: 0
 --- !u!114 &1270961525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8032,6 +8018,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   original: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   blink: {fileID: 2100000, guid: 5411ee3137f2db849887cc562f96985e, type: 2}
+--- !u!114 &1270961533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270961522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b3f9d6cb676a14fb17c55621b0ad49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  isDamaged: 0
 --- !u!1 &1303186647
 GameObject:
   m_ObjectHideFlags: 0
