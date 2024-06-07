@@ -12,5 +12,6 @@ public class Enemy : MonoBehaviour
     public float knockbackForceY;
     public float damageToGive;
     public float experienceToGive;
+    public bool shouldRespawn;
     #endregion
 }

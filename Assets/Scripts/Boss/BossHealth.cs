@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class EnemyHealth : MonoBehaviour
+public class BossHealth : MonoBehaviour
 {
     #region Variables
     Enemy enemy;
@@ -11,7 +12,6 @@ public class EnemyHealth : MonoBehaviour
     SpriteRenderer sprite;
     Blink material;
     Rigidbody2D rb;
-    //public GameObject deathEffect;
     #endregion
 
     private void Start()
@@ -39,12 +39,12 @@ public class EnemyHealth : MonoBehaviour
                 rb.AddForce(new Vector2(-enemy.knockbackForceX, enemy.knockbackForceY), ForceMode2D.Force);
             }
 
-            
+
             StartCoroutine(Damager());
             if (enemy.healthPoints <= 0)
             {
                 ExperienceScript.instance.expModifier(GetComponent<Enemy>().experienceToGive);
-                
+                SceneManager.LoadScene(3);
                 Destroy(gameObject);
             }
         }
