@@ -20,9 +20,9 @@ public class Keys : MonoBehaviour
     {
         if (other.CompareTag("Key"))
         {
-            keyCount++;
-
             Destroy(other.gameObject);
+            
+            keyCount++;
 
             if (keyCount >= 2)
             {
