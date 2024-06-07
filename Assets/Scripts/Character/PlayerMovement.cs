@@ -38,12 +38,25 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Layers & Tags")]
 	[SerializeField] private LayerMask _groundLayer;
-	#endregion
+
+    public static PlayerMovement Instance { get; private set; }
+    #endregion
 
     private void Awake()
 	{
 		RB = GetComponent<Rigidbody2D>();
-	}
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        RB = GetComponent<Rigidbody2D>();
+    }
 
 	private void Start()
 	{
@@ -224,7 +237,7 @@ public class PlayerMovement : MonoBehaviour
 	}
     #endregion
 
-	//MOVEMENT METHODS
+	
     #region RUN METHODS
     private void Run(float lerpAmount)
 	{
@@ -293,6 +306,7 @@ public class PlayerMovement : MonoBehaviour
 			force -= RB.velocity.y;
 
 		RB.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+		AudioManager.instance.PlayAudio(AudioManager.instance.jump);
 		#endregion
 	}
 

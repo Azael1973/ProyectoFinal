@@ -7,6 +7,10 @@ TagManager:
   - Ground
   - Enemy
   - Spikes
+  - Weapon
+  - Background
+  - Item
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -19,8 +23,8 @@ TagManager:
   - Background
   - Foreground
   - Enemys
-  - 
-  - 
+  - Spikes
+  - Item
   - 
   - 
   - 
@@ -43,4 +47,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1266660395
+    locked: 0
+  - name: Background
+    uniqueID: 2962616907
     locked: 0

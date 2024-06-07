@@ -4,51 +4,32 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public BoxCollider2D colAttack;
+    #region Variables
+    public Animator anim;
     public BoxCollider2D downAttackCollider;
+    public float activeTime = 0.3f;
     public Rigidbody2D playerRigidbody;
-    public Animator animator;
-    public float activeTime = 0.2f;
     public float bounceForce = 600f;
-
-    private void Awake()
-    {
-        colAttack.enabled = false;
-        downAttackCollider.enabled = false;
-    }
+    #endregion
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !Input.GetKey(KeyCode.S))
-        {
-            StartCoroutine(ActivateCollider(colAttack, activeTime));
-
-        }
-        
-        else if (Input.GetKeyDown(KeyCode.E) && Input.GetKey(KeyCode.S))
-        {
-            StartCoroutine(ActivateCollider(downAttackCollider, activeTime));
-        }
+        Attack();
     }
 
-    private IEnumerator ActivateCollider(BoxCollider2D collider, float time)
+    #region Metodos Ataque
+    public void Attack()
     {
-        collider.enabled = true;
-        yield return new WaitForSeconds(time);
-        collider.enabled = false;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
+        if (Input.GetButtonDown("Fire2"))
         {
-            Destroy(collision.gameObject);
+            anim.SetBool("Attack", true);
+            AudioManager.instance.PlayAudio(AudioManager.instance.melee);
         }
-        else if (collision.CompareTag("Spikes") && Input.GetKey(KeyCode.S))
+        else
         {
-            playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, 0);
-
-            playerRigidbody.AddForce(new Vector2(0, bounceForce));
+            anim.SetBool("Attack", false);
+            anim.SetBool("DownAttack", false);
         }
     }
+    #endregion
 }
